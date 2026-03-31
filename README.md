@@ -9,6 +9,12 @@
 
 또한, 이 파드가 클러스터 내의 **어떤 노드(Node)에 스케줄링 되었는지**와 파드의 **IP 주소**도 함께 확인해야 합니다. 이때 가장 적절한 조치를 취할 수 있는 명령어는 무엇입니까?
 
+#### **📖 관련 개념 키워드**
+- **Pod Lifecycle:** Pending → ContainerCreating → Running  
+   - 오류 시 ImagePullBackOff, CrashLoopBackOff 등이 발생할 수 있음.
+- **Control Plane:** Scheduler가 파드를 적절한 Node에 배치하는 과정을 이해해야 함.
+- **Troubleshooting:** 일반적으로 get → describe → logs 순서로 진단을 진행함.
+
 ---
 
 ### [선택지]
@@ -23,13 +29,9 @@
 <details>
 <summary><strong>정답 및 해설 보기</strong></summary>
 
-<br>
-
-### [정답 및 해설]
-
 #### **정답: 3번**
 
-#### **💡 상세 풀이**
+#### **풀이:**
 1. **describe 명령어가 정답인 이유:**
    - **Events 섹션:** kubectl describe는 리소스의 상세 정보뿐만 아니라 하단의 **Events** 로그를 보여줍니다. **ImagePullBackOff** 발생 시 **"Failed to pull image..."** 같은 구체적인 에러 메시지를 확인할 수 있는 가장 확실한 방법입니다.
    - **인프라 정보:** 문제에서 요구한 **Node(어느 워커 노드에 배포됐는지)**, **IP(파드 주소)**, **Labels**, **Namespace** 정보를 모두 포함하고 있습니다.
@@ -42,10 +44,6 @@
 
 <br>
 
-#### **📖 관련 개념 키워드**
-- **Pod Lifecycle:** Pending → ContainerCreating → Running  
-  오류 시 ImagePullBackOff, CrashLoopBackOff 등이 발생할 수 있습니다.
-- **Control Plane:** Scheduler가 파드를 적절한 Node에 배치하는 과정을 이해해야 합니다.
-- **Troubleshooting:** 일반적으로 get → describe → logs 순서로 진단을 진행합니다.
+
 
 
