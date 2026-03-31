@@ -1,6 +1,6 @@
 # 🐳 쿠버네티스 기초 개념 Quiz
 
-## 문제 1. 워커 노드에서 Pod를 실행하는 컴포넌트
+### 문제 1. 워커 노드에서 Pod를 실행하는 컴포넌트
 
 한 회사가 쿠버네티스 클러스터를 처음 구축하고 있습니다. 운영팀이 **kubectl**로 Pod 배포 명령을 실행했지만, 어떤 워커 노드에도 Pod가 스케줄링되지 않습니다. 조사 결과 워커 노드의 특정 컴포넌트가 동작하지 않고 있었습니다.
 
@@ -13,10 +13,11 @@
 4. kubelet
 
 <details>
-<summary> 정답 확인</summary>
+<summary><strong>정답 및 해설 보기</strong></summary>
 
-#### **정답: 4. kubelet**
+#### **정답: 4번**
 
+#### **풀이:**
 **kubelet**은 각 워커 노드에서 실행되며, 마스터 노드로부터 Pod 배포 지시를 받아 실제로 컨테이너를 생성하고 관리하는 역할을 합니다.
 
 - **kube-apiserver** → 마스터 노드의 API 진입점
@@ -27,7 +28,7 @@
 
 ---
 
-## 문제 2. 매니페스트의 핵심 구성 요소
+### 문제 2. 매니페스트의 핵심 구성 요소
 
 개발팀이 Nginx 웹 서버를 쿠버네티스에 배포하려고 합니다. YAML 매니페스트 파일을 작성하여 Pod를 정의하려는데, 매니페스트에 반드시 포함해야 하는 핵심 정보가 **아닌 것**은 무엇입니까?
 
@@ -37,10 +38,11 @@
 4. Pod가 배포될 워커 노드의 IP 주소 
 
 <details>
-<summary> 정답 확인</summary>
+<summary><strong>정답 및 해설 보기</strong></summary>
 
-#### **정답: 4. Pod가 배포될 워커 노드의 IP 주소**
+#### **정답: 4번**
 
+#### **풀이:**
 쿠버네티스 매니페스트의 핵심 구성 요소는 다음 네 가지입니다:
 
 ```yaml
@@ -56,7 +58,7 @@ Pod가 어떤 노드에 배치될지는 **kube-scheduler가 자동으로 결정*
 
 ---
 
-## 문제 3. Pod 간 안정적인 통신
+### 문제 3. Pod 간 안정적인 통신
 
 한 팀이 쿠버네티스 클러스터 내부에서 프론트엔드 Pod와 백엔드 Pod를 운영하고 있습니다. 프론트엔드 Pod가 백엔드 Pod에 접근해야 하는데, 백엔드 Pod가 재시작될 때마다 IP가 변경되어 통신이 끊기는 문제가 발생하고 있습니다.
 
@@ -69,10 +71,11 @@ Pod가 어떤 노드에 배치될지는 **kube-scheduler가 자동으로 결정*
 4. PersistentVolume
 
 <details>
-<summary> 정답 확인</summary>
+<summary><strong>정답 및 해설 보기</strong></summary>
 
-#### **정답: 3. Service**
+#### **정답: 3번**
 
+#### **풀이:**
 **Service**는 Pod 앞에 고정된 접근 포인트(IP와 DNS 이름)를 제공합니다. 백엔드 Pod의 IP가 변경되더라도 Service가 자동으로 정상 Pod에 트래픽을 전달해 주므로 통신이 끊기지 않습니다.
 
 - **ConfigMap** → 설정 데이터 저장용
@@ -83,7 +86,7 @@ Pod가 어떤 노드에 배치될지는 **kube-scheduler가 자동으로 결정*
 
 ---
 
-## 문제 4. 컨테이너 런타임의 역할
+### 문제 4. 컨테이너 런타임의 역할
 
 운영팀이 쿠버네티스 클러스터에서 컨테이너가 실행되지 않는 문제를 겪고 있습니다. 워커 노드에 접속하여 확인해보니 컨테이너 런타임(containerd)이 중지된 상태였습니다.
 
@@ -96,10 +99,11 @@ Pod가 어떤 노드에 배치될지는 **kube-scheduler가 자동으로 결정*
 4. Pod를 어떤 노드에 배치할지 결정하는 스케줄링 엔진이다.
 
 <details>
-<summary> 정답 확인</summary>
+<summary><strong>정답 및 해설 보기</strong></summary>
 
-#### **정답: 2. 컨테이너 이미지를 가져오고 실제 컨테이너를 생성·실행·삭제하는 소프트웨어이다.**
+#### **정답: 2번**
 
+#### **풀이:**
 **컨테이너 런타임**(containerd, CRI-O 등)은 컨테이너 이미지를 풀(pull)하고 실제로 컨테이너를 생성·실행·삭제하는 역할을 합니다.
 
 - A → **etcd**
@@ -110,7 +114,7 @@ Pod가 어떤 노드에 배치될지는 **kube-scheduler가 자동으로 결정*
 
 ---
 
-## 문제 5. 마스터 노드(Control Plane)의 구성 요소
+### 문제 5. 마스터 노드(Control Plane)의 구성 요소
 
 신입 엔지니어가 쿠버네티스 마스터 노드의 구성 요소를 학습하고 있습니다.
 
@@ -123,9 +127,11 @@ Pod가 어떤 노드에 배치될지는 **kube-scheduler가 자동으로 결정*
 4. kube-scheduler, kube-proxy, 컨테이너 런타임, etcd
 
 <details>
-<summary> 정답 확인</summary>
+<summary><strong>정답 및 해설 보기</strong></summary>
 
-#### **정답: 2. kube-apiserver, kube-scheduler, kube-controller-manager, etcd**
+#### **정답: 2번**
+
+#### **풀이:**
 
 **마스터 노드(Control Plane)** 의 핵심 구성 요소:
 
@@ -155,20 +161,19 @@ Pod가 어떤 노드에 배치될지는 **kube-scheduler가 자동으로 결정*
 
 또한, 이 파드가 클러스터 내의 **어떤 노드(Node)에 스케줄링 되었는지**와 파드의 **IP 주소**도 함께 확인해야 합니다. 이때 가장 적절한 조치를 취할 수 있는 명령어는 무엇입니까?
 
+1. kubectl logs web-server -n fisa-dev
+2. kubectl get pod web-server -n fisa-dev
+3. kubectl describe pod web-server -n fisa-dev
+4. kubectl exec -it web-server -n fisa-dev -- /bin/bash
+
+
 #### **📖 관련 개념 키워드**
 - **Pod Lifecycle:** Pending → ContainerCreating → Running  
    - 오류 시 ImagePullBackOff, CrashLoopBackOff 등이 발생할 수 있음.
 - **Control Plane:** Scheduler가 파드를 적절한 Node에 배치하는 과정을 이해해야 함.
 - **Troubleshooting:** 일반적으로 get → describe → logs 순서로 진단을 진행함.
 
----
 
-### [선택지]
-
-1. kubectl logs web-server -n fisa-dev
-2. kubectl get pod web-server -n fisa-dev
-3. kubectl describe pod web-server -n fisa-dev
-4. kubectl exec -it web-server -n fisa-dev -- /bin/bash
 
 ---
 
