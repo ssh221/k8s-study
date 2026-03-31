@@ -13,9 +13,9 @@
 4. kubelet
 
 <details>
-<summary>✅ 정답 확인</summary>
+<summary> 정답 확인</summary>
 
-### 정답: D) kubelet
+#### **정답: 4. kubelet**
 
 **kubelet**은 각 워커 노드에서 실행되며, 마스터 노드로부터 Pod 배포 지시를 받아 실제로 컨테이너를 생성하고 관리하는 역할을 합니다.
 
@@ -37,9 +37,9 @@
 4. Pod가 배포될 워커 노드의 IP 주소 
 
 <details>
-<summary>✅ 정답 확인</summary>
+<summary> 정답 확인</summary>
 
-### 정답: D) Pod가 배포될 워커 노드의 IP 주소
+#### **정답: 4. Pod가 배포될 워커 노드의 IP 주소**
 
 쿠버네티스 매니페스트의 핵심 구성 요소는 다음 네 가지입니다:
 
@@ -69,9 +69,9 @@ Pod가 어떤 노드에 배치될지는 **kube-scheduler가 자동으로 결정*
 4. PersistentVolume
 
 <details>
-<summary>✅ 정답 확인</summary>
+<summary> 정답 확인</summary>
 
-### 정답: C) Service
+#### **정답: 3. Service**
 
 **Service**는 Pod 앞에 고정된 접근 포인트(IP와 DNS 이름)를 제공합니다. 백엔드 Pod의 IP가 변경되더라도 Service가 자동으로 정상 Pod에 트래픽을 전달해 주므로 통신이 끊기지 않습니다.
 
@@ -96,9 +96,9 @@ Pod가 어떤 노드에 배치될지는 **kube-scheduler가 자동으로 결정*
 4. Pod를 어떤 노드에 배치할지 결정하는 스케줄링 엔진이다.
 
 <details>
-<summary>✅ 정답 확인</summary>
+<summary> 정답 확인</summary>
 
-### 정답: B) 컨테이너 이미지를 가져오고 실제 컨테이너를 생성·실행·삭제하는 소프트웨어이다.
+#### **정답: 2. 컨테이너 이미지를 가져오고 실제 컨테이너를 생성·실행·삭제하는 소프트웨어이다.**
 
 **컨테이너 런타임**(containerd, CRI-O 등)은 컨테이너 이미지를 풀(pull)하고 실제로 컨테이너를 생성·실행·삭제하는 역할을 합니다.
 
@@ -123,9 +123,9 @@ Pod가 어떤 노드에 배치될지는 **kube-scheduler가 자동으로 결정*
 4. kube-scheduler, kube-proxy, 컨테이너 런타임, etcd
 
 <details>
-<summary>✅ 정답 확인</summary>
+<summary> 정답 확인</summary>
 
-### 정답: B) kube-apiserver, kube-scheduler, kube-controller-manager, etcd
+#### **정답: 2. kube-apiserver, kube-scheduler, kube-controller-manager, etcd**
 
 **마스터 노드(Control Plane)** 의 핵심 구성 요소:
 
